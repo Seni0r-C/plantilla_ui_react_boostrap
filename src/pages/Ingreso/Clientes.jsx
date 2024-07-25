@@ -43,6 +43,7 @@ const Cliente = () => {
 
             for (const cocheId of selectedCoches) {
                 const fecha_compra = new Date().toISOString().split('T')[0];
+                console.log(coches);
                 const coche = coches.find(c => c.modelo == cocheId);
                 data = { ...data, fecha_compra, matricula: coche.matricula };
                 if (coche) {
@@ -168,7 +169,7 @@ const Cliente = () => {
                             <Form.Control
                                 as="select"
                                 multiple
-                                onChange={handleCocheChange}
+                                onChangeCapture={handleCocheChange}
                             >
                                 {/* si esta vacio que se muestre un mensaje */}
                                 {coches.length === 0 && <option value="">No hay coches disponibles</option>}
