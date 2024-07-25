@@ -170,6 +170,8 @@ const Cliente = () => {
                                 multiple
                                 onChange={handleCocheChange}
                             >
+                                {/* si esta vacio que se muestre un mensaje */}
+                                {coches.length === 0 && <option value="">No hay coches disponibles</option>}
                                 {coches.map(coche => (
                                     <option key={coche.id} value={coche.id}>
                                         {coche.modelo}
@@ -179,8 +181,7 @@ const Cliente = () => {
                         </Form.Group>
                     </Col>
                 </Row>
-
-                <Button type="submit">Registrar Cliente</Button>
+                {coches.length > 0 && <Button type="submit">Registrar Cliente</Button>}
             </Form>
         </Container>
     );
