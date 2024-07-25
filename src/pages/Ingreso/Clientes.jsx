@@ -11,21 +11,20 @@ const Cliente = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    useEffect(() => {
-        const fetchCoches = async () => {
-            try {
-                const response = await axios.get(API_URL + '/coches');
-                if (Array.isArray(response.data)) {
-                    setCoches(response.data);
-                } else {
-                    setError('Error al cargar la lista de coches.');
-                }
-            } catch (err) {
+    const fetchCoches = async () => {
+        try {
+            const response = await axios.get(API_URL + '/coches');
+            if (Array.isArray(response.data)) {
+                setCoches(response.data);
+            } else {
                 setError('Error al cargar la lista de coches.');
-                console.error(err);
             }
-        };
-
+        } catch (err) {
+            setError('Error al cargar la lista de coches.');
+            console.error(err);
+        }
+    };
+    useEffect(() => {
         fetchCoches();
     }, []);
 
@@ -66,6 +65,7 @@ const Cliente = () => {
                 setError('Error al registrar el cliente y las compras.' + err);
             }
         }
+        fetchCoches();
     };
 
 
