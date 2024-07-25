@@ -28,7 +28,7 @@ const Carro = () => {
         }
 
         try {
-            const response = await axios.post(API_URL + 'coches', {
+            const response = await axios.post(API_URL + '/coches', {
                 matricula,
                 marca,
                 modelo,
