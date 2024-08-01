@@ -31,7 +31,7 @@ const NavigationBar = () => {
                                 <Dropdown.Item as={Link} to="/">Regresar</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
-                        <Nav.Link as={Link} to="/ventas">Eliminación</Nav.Link>
+                        <Nav.Link as={Link} to="/eliminar">Eliminación</Nav.Link>
                         <Nav.Link as={Link} to="/">Salir</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

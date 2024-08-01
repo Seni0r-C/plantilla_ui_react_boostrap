@@ -8,6 +8,7 @@ import IngresoCarro from './pages/Ingreso/Carro';
 import IngresoRevisiones from './pages/Ingreso/Revision/Revision';
 import InformeCliente from './pages/informes/InformeCliente';
 import InformeMantenimientos from './pages/informes/InformeMantenimientos';
+import EliminarMantenimiento from './pages/eliminar/EliminarMantenimiento';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/ingreso/revisiones" element={<IngresoRevisiones />} />
           <Route path="/informe/clientes" element={<InformeCliente />} />
           <Route path="/informe/revisiones" element={<InformeMantenimientos />} />
+          <Route path="/eliminar" element={<EliminarMantenimiento />} />
         </Routes>
       </Layout>
     </Router>
