@@ -5,7 +5,7 @@ import Layout from './components/layout';
 import Home from './pages/Home';
 import IngresoClientes from './pages/Ingreso/Clientes';
 import IngresoCarro from './pages/Ingreso/Carro';
-import IngresoRevisiones from './pages/Ingreso/Revision';
+import IngresoRevisiones from './pages/Ingreso/Revision/Revision';
 import Ventas from './pages/Ventas';
 
 function App() {
