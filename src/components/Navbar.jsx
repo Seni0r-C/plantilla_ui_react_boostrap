@@ -21,7 +21,16 @@ const NavigationBar = () => {
                                 <Dropdown.Item as={Link} to="/">Regresar</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
-                        <Nav.Link as={Link} to="/carro">Informes</Nav.Link>
+                        <Dropdown>
+                            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                                Informes
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item as={Link} to="/informe/clientes">Clientes</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/informe/revisiones">Revisiones</Dropdown.Item>
+                                <Dropdown.Item as={Link} to="/">Regresar</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                         <Nav.Link as={Link} to="/ventas">Eliminación</Nav.Link>
                         <Nav.Link as={Link} to="/">Salir</Nav.Link>
                     </Nav>
