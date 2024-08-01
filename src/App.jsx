@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import IngresoClientes from './pages/Ingreso/Clientes';
 import IngresoCarro from './pages/Ingreso/Carro';
 import IngresoRevisiones from './pages/Ingreso/Revision/Revision';
+import InformeCliente from './pages/informes/InformeCliente';
+import InformeMantenimientos from './pages/informes/InformeMantenimientos';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/ingreso/vehiculo" element={<IngresoCarro />} />
           <Route path="/ingreso/clientes" element={<IngresoClientes />} />
           <Route path="/ingreso/revisiones" element={<IngresoRevisiones />} />
+          <Route path="/informe/clientes" element={<InformeCliente />} />
+          <Route path="/informe/revisiones" element={<InformeMantenimientos />} />
         </Routes>
       </Layout>
     </Router>
