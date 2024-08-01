@@ -33,12 +33,24 @@ const RevisionForm = ({ selectedVehicles }) => {
         }
     };
 
+    const handleCancel = () => {
+        setMaintenance({
+            cambio_filtro: false,
+            cambio_aceite: false,
+            cambio_frenos: false,
+            costo_revision: '',
+            fecha_hora_recepcion: '',
+            fecha_hora_entrega: '',
+        });
+    };
+
     return (
         <Form>
             <Form.Check
                 type="checkbox"
                 label="Cambio de Filtro"
                 name="cambio_filtro"
+                checked={maintenance.cambio_filtro}
                 onChange={handleChange}
             />
             <Form.Check
@@ -46,12 +58,14 @@ const RevisionForm = ({ selectedVehicles }) => {
                 label="Cambio de Aceite"
                 name="cambio_aceite"
                 onChange={handleChange}
+                checked={maintenance.cambio_aceite}
             />
             <Form.Check
                 type="checkbox"
                 label="Cambio de Frenos"
                 name="cambio_frenos"
                 onChange={handleChange}
+                checked={maintenance.cambio_frenos}
             />
             <Form.Group controlId="costo_revision">
                 <Form.Label>Costo de la Revisión</Form.Label>
@@ -59,6 +73,7 @@ const RevisionForm = ({ selectedVehicles }) => {
                     type="text"
                     name="costo_revision"
                     onChange={handleChange}
+                    value={maintenance.costo_revision}
                 />
             </Form.Group>
             <Form.Group controlId="fecha_hora_recepcion">
@@ -67,6 +82,7 @@ const RevisionForm = ({ selectedVehicles }) => {
                     type="datetime-local"
                     name="fecha_hora_recepcion"
                     onChange={handleChange}
+                    value={maintenance.fecha_hora_recepcion}
                 />
             </Form.Group>
             <Form.Group controlId="fecha_hora_entrega">
@@ -75,10 +91,14 @@ const RevisionForm = ({ selectedVehicles }) => {
                     type="datetime-local"
                     name="fecha_hora_entrega"
                     onChange={handleChange}
+                    value={maintenance.fecha_hora_entrega}
                 />
             </Form.Group>
             <Button variant="primary" onClick={handleSubmit}>
                 Crear Revisión
+            </Button>
+            <Button variant="secondary" onClick={handleCancel}>
+                Cancelar
             </Button>
         </Form>
     );

@@ -81,6 +81,13 @@ const Cliente = () => {
         setSelectedCoches(selected);
     };
 
+    const handleCancel = () => {
+        setError('');
+        setSuccess('');
+        setCoches([]);
+        setSelectedCoches([]);
+    };
+
     return (
         <Container>
             <h1>Registrar Cliente</h1>
@@ -182,7 +189,11 @@ const Cliente = () => {
                         </Form.Group>
                     </Col>
                 </Row>
-                {coches.length > 0 && <Button type="submit">Registrar Cliente</Button>}
+                {coches.length > 0 &&
+                    <>
+                        <Button type="submit">Registrar Cliente</Button>
+                        <Button variant="secondary" onClick={handleCancel}>Cancelar</Button>
+                    </>}
             </Form>
         </Container>
     );

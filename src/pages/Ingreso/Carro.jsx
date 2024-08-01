@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Form, Button, Alert, Container } from 'react-bootstrap';
+import { Form, Button, Alert, Container, Row } from 'react-bootstrap';
 import { API_URL } from '../../../Constantes';
 
 const Carro = () => {
@@ -45,6 +45,14 @@ const Carro = () => {
             // setError(err.response?.data?.error || 'Error al guardar los datos.');
             setError(err);
         }
+    };
+
+    const handleCancel = () => {
+        setMatricula('');
+        setMarca('');
+        setModelo('');
+        setColor('');
+        setPrecioVenta('');
     };
 
     return (
@@ -102,10 +110,14 @@ const Carro = () => {
                         onChange={(e) => setPrecioVenta(e.target.value)}
                     />
                 </Form.Group>
-
-                <Button variant="primary" type="submit" className="mt-4">
-                    Guardar
-                </Button>
+                <Row className="mt-4">
+                    <Button variant="primary" type="submit" className="w-50">
+                        Guardar
+                    </Button>
+                    <Button variant="secondary" onClick={handleCancel} className="w-50">
+                        Cancelar
+                    </Button>
+                </Row>
             </Form>
         </Container>
     );
