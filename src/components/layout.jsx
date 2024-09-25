@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
         const token = localStorage.getItem('token'); // Asegúrate de que el nombre del token sea correcto
         if (!token) {
             // Si no hay token, redirige al usuario al login
-            navigate('/login');
+            // navigate('/login');
         }
     }, [navigate]);
 

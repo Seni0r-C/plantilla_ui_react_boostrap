@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout';
 import Home from './pages/Home';
-import IngresoCarro from './pages/ejemplo/ejemplo';
 import Login from './pages/login';
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
         {/* Rutas con Layout */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/ejemplo" element={<IngresoCarro />} />
         </Route>
       </Routes>
     </Router>
