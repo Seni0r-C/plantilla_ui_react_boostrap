@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { Form, Button, Alert, Container, Row } from 'react-bootstrap';
-import { API_URL } from '../../../Constantes';
+import { API_URL } from '../../utils/Constantes';
 
 const Carro = () => {
     const [matricula, setMatricula] = useState('');
